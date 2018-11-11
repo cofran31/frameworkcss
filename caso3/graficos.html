@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Panel de Administrador</title>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link href="css/graficos.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="codebase/fonts/font_roboto/roboto.css"/>
+        <link rel="stylesheet" type="text/css" href="codebase/dhtmlxchart.css"/>
+        <link rel="stylesheet" type="text/css" href="codebase/dhtmlxgrid.css"/>
+        <script src="codebase/dhtmlxchart.js"></script>
+        <script src="common/companies.js"></script>
+        <script src="common/testdata.js"></script>
+        <script src="codebase/dhtmlxgrid.js"></script>
+        <script>
+            var myBarChart;
+            function doOnLoad() {
+                myBarChart = new dhtmlXChart({
+                    view: "bar",
+                    container: "chart_container",
+                    value: "#sales#",
+                    preset: "alpha",
+                    yAxis: {},
+                    xAxis: {
+                        template: "#id#"
+                    },
+                    label: "#sales#",
+                    sort: {
+                        by: "#id#",
+                        as: "string",
+                        dir: "asc"
+                    },
+                    group: {
+                        by: "#year#",
+                        map: {
+                            sales: ["#sales#", "sum"]
+                        }
+                    }
+                });
+                myBarChart.parse(data, "json");
+            }
+            function groupA() {
+                myBarChart.group({
+                    by: "#company#",
+                    map: {
+                        sales: ["#sales#", "sum"]
+                    }
+                });
+            }
+            function groupB() {
+                myBarChart.group({
+                    by: "#year#",
+                    map: {
+                        sales: ["#sales#", "sum"]
+                    }
+                });
+            }
+            function groupC() {
+                myBarChart.group({
+                    by: "#year#",
+                    map: {
+                        sales: ["#sales#", "max"]
+                    }
+                });
+            }
+            function sort(direction) {
+                myBarChart.define("sort", {
+                    by: "#sales#",
+                    dir: direction,
+                    as: "int"
+                });
+                myBarChart.render();
+            }
+
+            var myBarChart1, myBarChart2;
+            function doOnLoad1() {
+                myBarChart1 = new dhtmlXChart({
+                    view: "bar",
+                    container: "chart1",
+                    value: "#sales#",
+                    width: 30,
+                    color: "#7ed500",
+                    gradient: "rising",
+                    alpha: function (data) {
+                        return data.sales / 90;
+                    },
+                    tooltip: {
+                        template: "#sales#"
+                    },
+                    xAxis: {
+                        template: "'#year#"
+                    },
+                    yAxis: {
+                        start: 0,
+                        end: 100,
+                        step: 10,
+                        template: function (obj) {
+                            return (obj % 20 ? "" : obj)
+                        }
+                    },
+                    padding: {
+                        left: 30
+                    },
+                    border: 0
+                });
+                myBarChart1.parse(dataset, "json");
+                myBarChart2 = new dhtmlXChart({
+                    view: "bar",
+                    container: "chart2",
+                    value: "#sales#",
+                    label: "#sales#",
+                    width: 45,
+                    color: "#color#",
+                    tooltip: {
+                        template: "#sales#"
+                    },
+                    xAxis: {
+                        template: "'#year#"
+                    },
+                    yAxis: {
+                        start: 0,
+                        end: 100,
+                        step: 10,
+                        template: function (obj) {
+                            return (obj % 20 ? "" : obj)
+                        }
+                    },
+                    padding: {
+                        left: 30
+                    },
+                    radius: 0
+                });
+                myBarChart2.parse(dataset_colors, "json");
+            }
+            var myGrid;
+            function doOnLoad2() {
+                myGrid = new dhtmlXGridObject('gridbox');
+                myGrid.setImagePath("../../../codebase/imgs/");
+                myGrid.setHeader("Sales,Book Title,Author");
+                myGrid.setInitWidths("100,250,*");
+                myGrid.setColAlign("left,left,left");
+                myGrid.setColTypes("dyn,ed,ed");
+                myGrid.setColSorting("str,str,str");
+                myGrid.init();
+                myGrid.load("../common/100.xml");
+            }
+        </script>
+    </head>
+    <body>
+        <div class="superior">[Menú] 
+            <a href="">Inicio</a>
+            <a href="">Informes</a>
+            <a href="">Empleados</a>
+            <a href="">Acerca de.</a>
+
+        </div>
+        <div class="cuerpo">
+            <div class="cabecera">
+                <div class="logo">LOGO</div>
+                <div class="branv">
+                    [Buscador]
+                </div>
+                [Breadcrumbs]
+            </div>
+            <div class="submenu">[Submenu]</div>
+            <div class="contenido">[Contenido]
+                <br/><br/>
+                <div id="chart_container" style="width:600px;height:250px;border:1px solid #c0c0c0;"></div>
+ 
+                <div id="gridbox" style="width:544px; height: 266px; background-color:white;overflow:hidden"></div>
+            </div>
+        </div>
+        <script>
+            doOnLoad();
+           
+            doOnLoad2();
+        </script>
+    </body>
+</html>

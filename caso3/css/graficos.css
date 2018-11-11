@@ -1,0 +1,60 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 10-nov-2018, 19:32:27
+    Author     : Jc
+*/
+@media all and (max-width: 600px){
+    div{
+        display: block !important;  /* Cuando el ancho sea inferior a 600px el elemento será un bloque */
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: auto !important;
+        position: static !important;
+        float: none !important;
+    }
+}
+.superior{
+    background: #F99;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 30px;
+}
+.cuerpo{    /* Este es el delimitador para que la página no sea excesivamente grande */
+    max-width: 1000px;
+    margin:auto;
+}
+.cabecera{
+    background: #9F9;
+    margin-top: 30px;
+    height: 100px;
+}
+.submenu{
+    background: #99F;
+    float: left;    /* flotamos el elemento a la izquierda */
+    width: 20%;
+    height: 900px;
+}
+.contenido{
+    background: #AAA;
+    width: 80%;
+    margin-left: 20%;
+    height: 900px;
+}
+.logo{
+    background: #99F;
+    float: left;    /* flotamos el elemento a la izquierda */
+    width: 20%;
+    height: 80px;
+}
+.branv{
+    background: #AAA;
+    width: 80%;
+    margin-left: 20%;
+    height: 80px;
+}

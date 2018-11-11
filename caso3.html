@@ -132,38 +132,32 @@
                                                                     <th>#</th>
                                                                     <th>Prototipo</th>
                                                                     <th>Descripcion</th>
-                                                                    <th>Especificaciones</th>
+                                                                    <th>Codigo</th>
                                                                     <th>Ver</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
                                                                 <tr>
-                                                                    <th scope="row">7</th>
+                                                                    <th scope="row">1</th>
                                                                     <td>Inicio de Sesion(Gerentes)</td>
-                                                                    <td>Espedicicaciones</td>
-                                                                    <td>Mostrar</td>
-                                                                    <td>Mostrar</td>
+                                                                    <td>Se muestra el prototipo de login del usuario totalmente con css basico a traves de @media y % es responsivo</td>
+                                                                    <td><button type="button" class="btn btn-primary btn-block waves-effect" data-toggle="modal" data-target="#caso3">Codigo Css</button></td>
+                                                                    <td><a class="btn btn-primary btn-block waves-effect" href="caso3/login.html" target="_blank">Template</a></td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <th scope="row">8</th>
+                                                                    <th scope="row">2</th>
                                                                     <td>Panel de Gerentes(Socios)</td>
-                                                                    <td>Espedicicaciones</td>
-                                                                    <td>Mostrar</td>
-                                                                    <td>Mostrar</td>
+                                                                    <td>Se muestra el prototipo de como sera el panel de gerentes.</td>
+                                                                    <td><button type="button" class="btn btn-primary btn-block waves-effect" data-toggle="modal" data-target="#caso3_1">Codigo Css</button></td>
+                                                                    <td><a class="btn btn-primary btn-block waves-effect" href="caso3/panel.html" target="_blank">Template</a></td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <th scope="row">9</th>
-                                                                    <td>Buscar Informes(Administrador)</td>
-                                                                    <td>Espedicicaciones</td>
-                                                                    <td>Mostrar</td>
-                                                                    <td>Mostrar</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th scope="row">10</th>
-                                                                    <td>Informacion(Administrador)</td>
-                                                                    <td>Espedicicaciones</td>
-                                                                    <td>Mostrar</td>
-                                                                    <td>Mostrar</td>
+                                                                    <th scope="row">3</th>
+                                                                    <td>Graficos y tablas(Administrador)</td>
+                                                                    <td>A continuacion se describe el manejo de tablas y graficos para realizar esto se requiere la utilizacion de librerias externas en este
+                                                                        caso use las librerias de DHTMLX que proporciona la generacion de tablas y graficos como mostraremos.</td>
+                                                                    <td><button type="button" class="btn btn-primary btn-block waves-effect" data-toggle="modal" data-target="#caso3_2">Codigo Css</button></td>
+                                                                    <td><a class="btn btn-primary btn-block waves-effect" href="caso3/graficos.html" target="_blank">Template</a></td>   
                                                                 </tr>
                                                             </tbody>
                                                         </table>
@@ -369,7 +363,9 @@
                 <div class="col-xs-12 ol-sm-12 col-md-12 col-lg-12">
                     <b>3. Implementacion Tecnica:</b>
                     <br/><br/>
-
+                    <a class="btn btn-primary btn-block waves-effect" href="caso3/login.html" target="_blank">Login</a>
+                    <a class="btn btn-primary btn-block waves-effect" href="caso3/panel.html" target="_blank">Panel</a>
+                    <a class="btn btn-primary btn-block waves-effect" href="caso3/graficos.html" target="_blank">Graficos</a>
                 </div>
             </div>
             <!-- #END# Full Body Colorful Panel Items With Icon -->
@@ -377,8 +373,156 @@
 
     </div>
 
+    <div class="modal fade" id="caso3" tabindex="-1" role="dialog" style="display: none;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <small>
+                        @media all and (max-width: 600px){<br/>
+                        div{<br/>
+                        display: block !important;  /* Cuando el ancho sea inferior a 600px el elemento será un bloque */<br/>
+                        width: 100% !important;<br/>
+                        max-width: 100% !important;<br/>
+                        margin: auto !important;<br/>
+                        position: static !important;<br/>
+                        float: none !important;<br/>
+                        }<br/>
+                        }<br/>
+                        .superior{<br/>
+                        background: #F99;<br/>
+                        position: fixed;<br/>
+                        top: 0px;<br/>
+                        left: 0px;<br/>
+                        width: 100%;<br/>
+                        height: 30px;<br/>
+                        }<br/>
+                        .cuerpo{    /* Este es el delimitador para que la página no sea excesivamente grande */<br/>
+                        max-width: 1000px;<br/>
+                        margin:auto;<br/>
+                        }<br/>
+                        .cabecera{<br/>
+                        background: #9F9;<br/>
+                        margin-top: 30px;<br/>
+                        height: 100px;<br/>
+                        }<br/>
+                        .agenda{<br/>
+                        background: #99F;<br/>
+                        float: left;    /* flotamos el elemento a la izquierda */<br/>
+                        width: 35%;<br/>
+                        height: 600px;<br/>
+                        }<br/>
+                        .contenido{<br/>
+                        background: #AAA;<br/>
+                        width: 100%;<br/>
 
+                        height: 900px;<br/>
+                        }<br/>
+                        .logo{<br/>
+                        background: #99F;<br/>
+                        float: left;    /* flotamos el elemento a la izquierda */<br/>
+                        width: 20%;<br/>
+                        height: 80px;<br/>
+                        }<br/>
+                        .branv{<br/>
+                        background: #AAA;<br/>
+                        width: 80%;<br/>
+                        margin-left: 20%;<br/>
+                        height: 80px;<br/>
+                        }<br/>
+                    </small>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="caso3_1" tabindex="-1" role="dialog" style="display: none;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <small>
+                        @media all and (max-width: 600px){<br/>
+                        div{<br/>
+                        display: block !important;  /* Cuando el ancho sea inferior a 600px el elemento será un bloque */<br/>
+                        width: 100% !important;<br/>
+                        max-width: 100% !important;<br/>
+                        margin: auto !important;<br/>
+                        position: static !important;<br/>
+                        float: none !important;<br/>
+                        }<br/>
+                        }<br/>
+                        .superior{<br/>
+                        background: #F99;<br/>
+                        position: fixed;<br/>
+                        top: 0px;<br/>
+                        left: 0px;<br/>
+                        width: 100%;<br/>
+                        height: 30px;<br/>
+                        }<br/>
+                        .cuerpo{    /* Este es el delimitador para que la página no sea excesivamente grande */<br/>
+                        max-width: 1000px;<br/>
+                        margin:auto;<br/>
+                        }<br/>
+                        .cabecera{<br/>
+                        background: #9F9;<br/>
+                        margin-top: 30px;<br/>
+                        height: 100px;<br/>
+                        }<br/>
+                        .submenu{<br/>
+                        background: #99F;<br/>
+                        float: left;    /* flotamos el elemento a la izquierda */<br/>
+                        width: 20%;<br/>
+                        height: 600px;<br/>
+                        }<br/>
+                        .contenido{<br/>
+                        background: #AAA;<br/>
+                        width: 80%;<br/>
+                        margin-left: 20%;<br/>
+                        height: 900px;<br/>
+                        }<br/>
+                        .logo{<br/>
+                        background: #99F;<br/>
+                        float: left;    /* flotamos el elemento a la izquierda */<br/>
+                        width: 20%;<br/>
+                        height: 80px;<br/>
+                        }<br/>
+                        .branv{<br/>
+                        background: #AAA;<br/>
+                        width: 80%;<br/>
+                        margin-left: 20%;<br/>
+                        height: 80px;<br/>
+                        }<br/>
 
+                    </small>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="caso3_2" tabindex="-1" role="dialog" style="display: none;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <small>
+                        Este prototipo posee la libreria de panel.css anterior.<br/><br/>
+                        Adicionalmente use las librerias de dhtmlx como ser:<br/><br/>
+                        < link rel="stylesheet" type="text/css" href="codebase/dhtmlxchart.css"/> <br/><br/>
+                        < link rel="stylesheet" type="text/css" href="codebase/dhtmlxgrid.css"/> <br/><br/>
+                        < script src="codebase/dhtmlxchart.js"> < /script><br/><br/>
+                        < script src="common/companies.js"> < /script><br/><br/>
+                        < script src="common/testdata.js"> < /script><br/><br/>
+                        < script src="codebase/dhtmlxgrid.js"> < /script><br/><br/>
+                    </small>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">CLOSE</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="js/pages/ui/tooltips-popovers.js"></script>
 
 
